@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { Children, useState } from 'react';
+import {
+  Route,
+  createBrowserRouter,
+  RouterProvider,
+  Link,
+} from 'react-router-dom';
 import {
   ChakraProvider,
   Box,
   Text,
-  Link,
+  Link as LinkFromChakra,
   VStack,
   Code,
   Grid,
@@ -11,30 +17,46 @@ import {
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
+import ProductList from './components/ProductList/ProductList';
+import SearchProducts from './components/SearchProducts/SearchProducts';
 
 function App() {
+  const [searchProduct, setSearchProduct] = useState('');
+
+  const handleSearch = product => {
+    setSearchProduct(product);
+  };
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <SearchProducts onSearch={handleSearch} />,
+      children: [
+        {
+          path: '/',
+          element: <div>main route</div>,
+        },
+        {
+          path: '/product-list',
+          element: <ProductList />,
+        },
+      ],
+    },
+  ]);
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
+      <RouterProvider router={router} />
+      {/* <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={<SearchProducts onSearch={handleSearch} />}
+          />
+          <Route
+            path="/product-list"
+            element={<ProductList searchProduct={searchProduct} />}
+          />
+        </Routes>
+      </Router> */}
     </ChakraProvider>
   );
 }
