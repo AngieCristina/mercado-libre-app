@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 
 function ProductList({ searchProduct }) {
   const [products, setProducts] = useState([]);
@@ -6,7 +7,6 @@ function ProductList({ searchProduct }) {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     getProducts();
-    console.log(searchProduct,'productlist');
   }, [searchProduct]);
   async function getProducts() {
     setIsLoading(true);
@@ -33,6 +33,7 @@ function ProductList({ searchProduct }) {
     setIsLoading(false);
   }
 
+
   return (
     <div>
       {isLoading ? ( // Mostrar un mensaje de carga mientras isLoading sea true
@@ -41,17 +42,8 @@ function ProductList({ searchProduct }) {
         <p>{noResults}</p>
       ) : (
         <>
-          {!searchProduct && products.slice(0, 4).map((product) => (
-            <div key={product.id}>
-              <p>{product.address.state_name}</p>
-              <p>{product.condition}</p>
-              <p>{product.sold_quantity}</p>
-              <p>{product.title}</p>
-              <p>{product.price}</p>
-              <img src={product.thumbnail} alt={product.title} />
-            </div>
-          ))}
           {searchProduct && products.map((product) => (
+             <Link to={`/product-list/${product.id}`}>
             <div key={product.id}>
               <p>{product.address.state_name}</p>
               <p>{product.condition}</p>
@@ -60,6 +52,7 @@ function ProductList({ searchProduct }) {
               <p>{product.price}</p>
               <img src={product.thumbnail} alt={product.title} />
             </div>
+            </Link>
           ))}
         </>
       )}

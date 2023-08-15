@@ -19,6 +19,7 @@ import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
 import ProductList from './components/ProductList/ProductList';
 import SearchProducts from './components/SearchProducts/SearchProducts';
+import ProductDetails from './components/ProductDetails/ProductDetails';
 
 function App() {
   const [searchProduct, setSearchProduct] = useState('');
@@ -32,7 +33,7 @@ function App() {
       element: (
         <>
           <SearchProducts onSearch={handleSearch} />
-          <Link to='/product-list'/>
+          <Link to="/product-list" />
           <Outlet />
         </>
       ),
@@ -40,6 +41,10 @@ function App() {
         {
           path: '/product-list',
           element: <ProductList searchProduct={searchProduct} />,
+        },
+        {
+          path: '/product-list/:productId',
+          element: <ProductDetails/>,
         },
       ],
     },
