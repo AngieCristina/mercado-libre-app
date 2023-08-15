@@ -24,10 +24,21 @@ function ProductDetails() {
   }, [productId]);
 
   return (
+    <>
     <div>
       <h2>Detalles del producto</h2>
-      {/* ... Otros detalles del producto ... */}
+    {productDetails ? (
+      <div>
+      <img src={productDetails.thumbnail} alt={productDetails.image} />
+      <h2>{productDetails.condition}</h2>
+      <h2>{productDetails.title}</h2>
+      <h2>{productDetails.original_price}</h2>
+      </div>
+    ) : (
+      <p>Loading...</p>
+    )}
     </div>
+    </>
   );
 }
 
