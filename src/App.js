@@ -1,9 +1,9 @@
 import React, { Children, useState } from 'react';
 import {
-  Route,
   createBrowserRouter,
   RouterProvider,
   Link,
+  Outlet,
 } from 'react-router-dom';
 import {
   ChakraProvider,
@@ -29,15 +29,17 @@ function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <SearchProducts onSearch={handleSearch} />,
+      element: (
+        <>
+          <SearchProducts onSearch={handleSearch} />
+          <Link to='/product-list'/>
+          <Outlet />
+        </>
+      ),
       children: [
         {
-          path: '/',
-          element: <div>main route</div>,
-        },
-        {
           path: '/product-list',
-          element: <ProductList />,
+          element: <ProductList searchProduct={searchProduct} />,
         },
       ],
     },
@@ -45,18 +47,6 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <RouterProvider router={router} />
-      {/* <Router>
-        <Routes>
-          <Route
-            path="/"
-            element={<SearchProducts onSearch={handleSearch} />}
-          />
-          <Route
-            path="/product-list"
-            element={<ProductList searchProduct={searchProduct} />}
-          />
-        </Routes>
-      </Router> */}
     </ChakraProvider>
   );
 }

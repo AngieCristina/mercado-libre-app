@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function SearchProducts({ onSearch }) {
   const [searchProduct, setSearchProduct] = useState('');
@@ -13,12 +14,14 @@ function SearchProducts({ onSearch }) {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={searchProduct} onChange={handleChange} />
-        <button type="submit">Buscar</button>
-      </form>
-    </div>
+    <Link type="submit" to="/product-list">
+      <div>
+        <form onSubmit={handleSubmit}>
+          <input type="text" value={searchProduct} onChange={handleChange} />
+          Buscar
+        </form>
+      </div>
+    </Link>
   );
 }
 
