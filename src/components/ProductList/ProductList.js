@@ -1,6 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
-
+import { Link } from 'react-router-dom';
+import {
+  Card,
+  Text,
+  CardBody,
+  Image,
+  Stack,
+  HStack,
+  Heading,
+  Divider,
+  CardFooter,
+  ButtonGroup,
+  Button,
+} from '@chakra-ui/react';
 function ProductList({ searchProduct }) {
   const [products, setProducts] = useState([]);
   const [noResults, setNoResults] = useState('');
@@ -33,30 +45,52 @@ function ProductList({ searchProduct }) {
     setIsLoading(false);
   }
 
-
   return (
-    <div>
+    <Stack direction={['column', 'row']} spacing="24x" m={10}>
       {isLoading ? ( // Mostrar un mensaje de carga mientras isLoading sea true
         <p>Cargando...</p>
       ) : noResults ? (
         <p>{noResults}</p>
       ) : (
         <>
-          {searchProduct && products.map((product) => (
-             <Link to={`/product-list/${product.id}`}>
-            <div key={product.id}>
-              <p>{product.address.state_name}</p>
-              <p>{product.condition}</p>
-              <p>{product.sold_quantity}</p>
-              <p>{product.title}</p>
-              <p>{product.price}</p>
-              <img src={product.thumbnail} alt={product.title} />
-            </div>
-            </Link>
-          ))}
+          {searchProduct &&
+            products.map(product => (
+              <Link to={`/product-list/${product.id}`}>
+                <HStack
+                  direction={['column', 'row']}
+                  m={2}
+                  align-items
+                  baseline
+                  spacing="24px"
+                >
+                  <Card maxW="sm">
+                    <CardBody>
+                      <Image
+                        src={product.thumbnail}
+                        alt={product.title}
+                        borderRadius="lg"
+                      />
+                      <Heading size="m">{product.address.state_name}</Heading>
+                      <Text>{product.condition}</Text>
+                      <Text color="blue.600" fontSize="1xl">
+                        $ {product.price}
+                      </Text>
+                    </CardBody>
+                    <Divider />
+                    <CardFooter>
+                      <ButtonGroup spacing="2">
+                        <Button variant="solid" colorScheme="blue">
+                          VER
+                        </Button>
+                      </ButtonGroup>
+                    </CardFooter>
+                  </Card>
+                </HStack>
+              </Link>
+            ))}
         </>
       )}
-    </div>
+    </Stack>
   );
 }
 
