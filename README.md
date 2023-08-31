@@ -24,7 +24,6 @@ Puedes ver una demostración de la aplicación en vivo [aquí](https://github.co
 
 ## Captura de Pantalla
 <img width="1440" alt="product-list" src="https://github.com/AngieCristina/mercado-libre-app/assets/46632846/2326d13d-80ee-4f2c-9cf6-a20ca12ff6ba">
-
 -----------------
 <img width="1440" alt="productDetail" src="https://github.com/AngieCristina/mercado-libre-app/assets/46632846/440a20eb-c3e7-4858-af6e-145bfd9771e5">
 
