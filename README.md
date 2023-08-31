@@ -4,10 +4,6 @@
   Aplicación para buscar productos en Mercado Libre.
 </p>
 
-<p align="center">
-  <img alt="Captura de Pantalla" src="URL_DE_LA_IMAGEN_DE_CAPTURA">
-</p>
-
 ## Descripción
 
 Esta es una aplicación web para buscar productos en Mercado Libre utilizando su API pública.
@@ -16,15 +12,21 @@ Esta es una aplicación web para buscar productos en Mercado Libre utilizando su
 
 - Búsqueda de productos por nombre.
 - Visualización de detalles de productos.
-- ...
+
+## Tecnologías Utilizadas
+
+- React
+- Chakra UI
 
 ## Demo
 
-Puedes ver una demostración de la aplicación en vivo [aquí](URL_DEL_SITIO_DEMUESTRA).
+Puedes ver una demostración de la aplicación en vivo [aquí](https://github.com/AngieCristina/mercado-libre-app/assets/46632846/87fd83c2-1e19-490b-bbc4-1990ac7ba6c1).
 
 ## Captura de Pantalla
+<img width="1440" alt="product-list" src="https://github.com/AngieCristina/mercado-libre-app/assets/46632846/2326d13d-80ee-4f2c-9cf6-a20ca12ff6ba">
 
-![Captura de Pantalla](URL_DE_LA_IMAGEN_DE_CAPTURA)
+-----------------
+<img width="1440" alt="productDetail" src="https://github.com/AngieCristina/mercado-libre-app/assets/46632846/440a20eb-c3e7-4858-af6e-145bfd9771e5">
 
 ## Instalación
 
@@ -45,11 +47,6 @@ Puedes ver una demostración de la aplicación en vivo [aquí](URL_DEL_SITIO_DEM
 4. Push a la rama (`git push origin feature/nueva-caracteristica`)
 5. Crea un nuevo Pull Request
 
-## Tecnologías Utilizadas
-
-- React
-- Chakra UI
-- ...
 
 ## Licencia
 
