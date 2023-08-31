@@ -7,11 +7,12 @@ import {
   Image,
   Stack,
   HStack,
-  Heading,
   Divider,
   CardFooter,
   ButtonGroup,
   Button,
+  Spinner,
+  Flex,
 } from '@chakra-ui/react';
 function ProductList({ searchProduct }) {
   const [products, setProducts] = useState([]);
@@ -36,7 +37,7 @@ function ProductList({ searchProduct }) {
       );
     }
     if (filteredResults.length === 0) {
-      setNoResults('No se encontraron resultados');
+      setNoResults('');
       setProducts([]);
     } else {
       setNoResults('');
@@ -46,23 +47,28 @@ function ProductList({ searchProduct }) {
   }
 
   return (
-    <Stack direction={['column', 'row']} spacing="24x" m={10}>
-      {isLoading ? ( // Mostrar un mensaje de carga mientras isLoading sea true
-        <p>Cargando...</p>
+    <Stack
+      direction={['column', 'row']}
+      spacing="24x"
+      m={10}
+      alignItems="flex-end"
+    >
+      {isLoading ? (
+        <Spinner
+          thickness="4px"
+          speed="0.65s"
+          emptyColor="gray.200"
+          color="blue.500"
+          size="xl"
+        />
       ) : noResults ? (
         <p>{noResults}</p>
       ) : (
         <>
           {searchProduct &&
             products.map(product => (
-              <Link to={`/product-list/${product.id}`}>
-                <HStack
-                  direction={['column', 'row']}
-                  m={2}
-                  align-items
-                  baseline
-                  spacing="24px"
-                >
+              <Link key={product.id} to={`/product-list/${product.id}`}>
+                <HStack direction={['column', 'row']} m={2} spacing="24px">
                   <Card maxW="sm">
                     <CardBody>
                       <Image
@@ -70,11 +76,12 @@ function ProductList({ searchProduct }) {
                         alt={product.title}
                         borderRadius="lg"
                       />
-                      <Heading size="m">{product.address.state_name}</Heading>
+                      <Text>{product.title}</Text>
                       <Text>{product.condition}</Text>
                       <Text color="blue.600" fontSize="1xl">
                         $ {product.price}
                       </Text>
+                      <Text>{product.address.state_name}</Text>
                     </CardBody>
                     <Divider />
                     <CardFooter>
