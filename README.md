@@ -1,68 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">Mercado Libre App</h1>
 
-## Available Scripts
+<p align="center">
+  Aplicación para buscar productos en Mercado Libre.
+</p>
 
-In the project directory, you can run:
+<p align="center">
+  <img alt="Captura de Pantalla" src="URL_DE_LA_IMAGEN_DE_CAPTURA">
+</p>
 
-### `npm start`
+## Descripción
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Esta es una aplicación web para buscar productos en Mercado Libre utilizando su API pública.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Características
 
-### `npm test`
+- Búsqueda de productos por nombre.
+- Visualización de detalles de productos.
+- ...
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Demo
 
-### `npm run build`
+Puedes ver una demostración de la aplicación en vivo [aquí](URL_DEL_SITIO_DEMUESTRA).
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Captura de Pantalla
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![Captura de Pantalla](URL_DE_LA_IMAGEN_DE_CAPTURA)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Instalación
 
-### `npm run eject`
+1. Clona este repositorio: `git clone https://github.com/AngieCristina/mercado-libre-app.git`
+2. Ingresa al directorio del proyecto: `cd mercado-libre-app`
+3. Instala las dependencias: `npm install`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Uso
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Inicia la aplicación: `npm start`
+2. Abre tu navegador y ve a `http://localhost:3000`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Contribución
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Hacer un fork (<https://github.com/AngieCristina/mercado-libre-app/fork>)
+2. Crear una rama (`git checkout -b feature/nueva-caracteristica`)
+3. Commit de tus cambios (`git commit -am 'Añadir nueva característica'`)
+4. Push a la rama (`git push origin feature/nueva-caracteristica`)
+5. Crea un nuevo Pull Request
 
-## Learn More
+## Tecnologías Utilizadas
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- React
+- Chakra UI
+- ...
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Licencia
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Distribuido bajo la licencia MIT. Consulta `LICENSE` para más información.
